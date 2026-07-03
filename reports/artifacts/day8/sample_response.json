@@ -1,0 +1,9 @@
+{
+  "transaction_id": "TX12345",
+  "prediction": "fraud",
+  "fraud_probability": 0.92,
+  "confidence_score": 0.92,
+  "decision": "hold_and_investigate",
+  "reason": "Transaction flagged for high transaction velocity, high IP risk score, low device trust score, location mismatch, previous chargeback history, high corridor risk, unusual high internal risk score.",
+  "model_version": "day6_best_advanced_model"
+}
