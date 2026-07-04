@@ -1,8 +1,8 @@
-# NovaPay Day 8 API Validation Notes
+# NovaPay API Validation Notes
 
 The `/score` endpoint accepts one transaction at a time and validates the payload with Pydantic before any model inference runs.
 
-Critical validations include:
+## Implemented validation rules
 
 - `transaction_id` and `customer_id` must be present and non-empty.
 - `timestamp` must be parseable as a valid datetime.
@@ -12,5 +12,11 @@ Critical validations include:
 - Count and velocity fields must be non-negative.
 - `new_device` and `location_mismatch` must be booleans.
 - Country, currency, channel, device, IP, and KYC fields must be non-empty strings.
+
+## Important scope note
+
+The API validates `ip_address`, country, currency, channel, and KYC fields as required non-empty strings. It does not enforce a fixed allow-list or validate IP address format. This keeps the API aligned with the training data and avoids rejecting categories that the model preprocessing can handle.
+
+## Why these checks matter
 
 These checks prevent invalid or malicious payloads from entering the model pipeline, reduce scoring errors, and improve trust in real-time fraud decisions.
