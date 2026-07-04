@@ -338,3 +338,7 @@ NovaPay Fraud Detection Project
 Day 8 – API Packaging and Deployment
 
 Built as part of the NovaPay Fraud Detection Machine Learning Pipeline.
+
+## License
+
+This project was developed for educational and portfolio purposes as part of the NovaPay Fraud Detection internship project.
